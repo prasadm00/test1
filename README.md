@@ -65,8 +65,11 @@
 - https://github.com/bobbyhadz/aws-cdk-lambda-layers
 
 
- [Go to Real Cool Heading section](#real-cool-heading)
+## Useful Guides
+- [AWS Pinpoint Segment Data Recovery Guide](#AWS-pinpoint-segment-data-recovery-guide)
 
+
+# AWS Pinpoint Segment Data Recovery Guide
 
 
 
