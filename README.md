@@ -1,76 +1,18 @@
 
-# CityPT Email Operations
-## Getting Started
-
-
-
- # Real Cool Heading
-
-
-### Prerequisites
-
-- install AWS CDK `npm i -g aws-cdk`
-- install the AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
-- notate the name of your profile
-  - for example, in my /.aws/credentials file, there is a profile named `cityptstaging`.
-    When commands below reference `$PROFILE`, I indicate `--profile cityptstaging`
-- clone the repo
-- `npm install`
-- copy `.env.example` to `.env`
-  - add the citypt staging account number and region
-
-#### AWS Objects
-- AWS Pinpoint applicationId is created, app id value stored in resources/default.json
-- Created application has sms and email channel enabled
-
-### Deploying
-
-`cdk deploy --profile $profile`
-
-### User import
-- Python script located at scripts/endpointImport.py
-- Requires boto3 and aws credentials to be configured
-- Usage: `python script.py sampleImport.csv`
-
-
-### Testing
-
-- run tests
-`npm test`
-- with code coverage
-`npm test -- --coverage`
-
-### Repo
-
-- `/bin/citypt-email-operations.ts`
-  - The main deployer for the CDK templates
-- `/lib/citypt-email-operations-stack.ts`
-  - The CDK stack definition
-  - Edit this file to add new endpoints, layers, lambda functions, etc
-- `src/citypt-email-operations-lambda/index.ts`
-  - The lambda that receives a POST request from the API gateway and routes the payload
-- `src/citypt-email-operations-lambda/marketingServiceApi.ts`
-  - Module for AWS communication
-
-### Monitoring
-
-#### Health check endpoint
-
-- Endpoint `/v1/ping` is responded to by /src/citypt-email-operations-lambda/index.ts
-
-## Helpful Docs
-- https://docs.aws.amazon.com/cdk/v2/guide/serverless_example.html
-- https://docs.aws.amazon.com/cdk/v2/guide/hello_world.html
-- https://github.com/bobbyhadz/aws-cdk-api-gateway-example
-- https://github.com/bobbyhadz/aws-cdk-lambda-layers
 
 
 ## Useful Guides
-- [AWS Pinpoint Segment Data Recovery Guide](#AWS-pinpoint-segment-data-recovery-guide)
+- [Chapter 1. AWS Pinpoint Segment Data Recovery Guide](#AWS-pinpoint-segment-data-recovery-guide)
 
 
 # AWS Pinpoint Segment Data Recovery Guide
+- **Introduction :** Accidentally deleting a segment in AWS Pinpoint can be a frustrating experience,
+but there is a way to recover the lost data. This guide outlines the steps to retrieve a deleted
+segment effectively.
 
-
-
+- **Method :**
+ **1. Comment Out the Deleted Segment :**
+ - Open the AWS CDK (Cloud Development Kit) code where the deleted segment was defined.
+ - Locate the section of code responsible for defining the segment. In this example, we will refer to a segment named **"marketing"** defined in the **citypt-email-operations-stack.ts** file.
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
